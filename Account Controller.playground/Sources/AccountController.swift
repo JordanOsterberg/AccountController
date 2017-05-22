@@ -1,5 +1,8 @@
 import UIKit
+
 public class AccountController : UIViewController, UITextFieldDelegate {
+    
+    // MARK -- Views
     
     let scrollView : UIScrollView = {
         let scrollView = UIScrollView()
@@ -80,6 +83,8 @@ public class AccountController : UIViewController, UITextFieldDelegate {
         return control
     }()
     
+    // MARK -- Dynamic Setup function for playground usage
+    // This is not necessary for real world usage. 
     var backgroundColor : UIColor?
     var buttonColor : UIColor?
     var buttonTextColor : UIColor?
@@ -220,12 +225,12 @@ public class AccountController : UIViewController, UITextFieldDelegate {
     }
     
     public func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.scrollView.contentOffset = CGPoint(x: 0, y: 100)
+        self.scrollView.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
     }
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        self.scrollView.contentOffset = CGPoint(x: 0, y: 0)
+        self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         return true
     }
     
@@ -233,7 +238,8 @@ public class AccountController : UIViewController, UITextFieldDelegate {
         self.nameInputField.resignFirstResponder()
         self.emailInputField.resignFirstResponder()
         self.passwordInputField.resignFirstResponder()
-        self.scrollView.contentOffset = CGPoint(x: 0, y: 0)
+        
+        self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
 }
