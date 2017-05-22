@@ -33,7 +33,6 @@ func presentAccountController() {
 It's that easy.
 
 ## Bugs
-* When the action button is tapped, and the user is editing text, the view resets with no animation
 * Some logos require modifications to get them to work as intended 
 
 ## License
